@@ -1,0 +1,853 @@
+<div style="width: 500px;height: 500px;background: red;">
+
+ng-include
+
+</div>
+
+
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform " />
+    <title>个人资料-猪八戒网</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+
+    <script>
+        void function(e,t,n,a,o,i,m){
+            e.alogObjectName=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=e[o].l||+new Date,i=t.createElement(n),i.asyn=1,i.src=a,m=t.getElementsByTagName(n)[0],m.parentNode.insertBefore(i,m)
+        }(window,document,"script","http://cms.zbjimg.com/log/alog.js","alog");
+    </script>
+    <link rel="shortcut icon" href="http://s.zbjimg.com/img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="http://t5.zbjimg.com/min/?b=v&f=g.css,base.css,module/tips.css,tips-c.css,module/window.css,head.css,footer.css&v=0910">    <link rel="stylesheet" type="text/css" href="http://t5.zbjimg.com/min/?b=v&f=main.css,pub.css,edit.css&v=20140414">    <link rel="stylesheet" type="text/css" href="http://t5.zbjimg.com/v/webim/WebIM.css">
+    <link type="text/css" rel="stylesheet" href="http://t5.zbjimg.com/t5s/common/css/global4oldpage-b50b304f073e10a6.css"/>
+
+    <link type="text/css" rel="stylesheet" href="http://t6.zbjimg.com/output/global/basestyle-bbc33d0903cf33b5.css"/>
+
+
+
+    <script>
+        //存放一些基本的页面信息
+        //pageDomain是domian。如zhubajie.con
+        //baseURI 是主域名地址。比如t5.zbj.com
+        window.ZBJInfo = {
+            pageDomain: "zbj.com",
+            baseURI: "zbj.com",
+            staticURI: "http://t5.zbjimg.com",
+            isShowChatEntry: 0,
+            newStaticLibURI: "http://t6.zbjimg.com",
+            rakeStaticLibURI: "http://a.zbjimg.com",
+            searchCfg: {"witkey":{"placeholder":"\u7cbd\u5b50\u5305\u88c5\u5370\u5237\u4e00\u952e\u641e\u5b9a\uff0c\u52b2\u7206\u4f4e\u4ef7","def_keyword":"\u7cbd\u5b50\u5305\u88c5"},"service":{"placeholder":"\u7cbd\u5b50\u5305\u88c5\u5370\u5237\u4e00\u952e\u641e\u5b9a\uff0c\u52b2\u7206\u4f4e\u4ef7","def_keyword":"\u7cbd\u5b50\u5305\u88c5"},"task":{"placeholder":"","def_keyword":""}},
+            uploadUrl: "http://upload.zbj.com/fileupload/index",
+            zhubiaojuURI: "http://ipr.zbj.com",
+            UPFILEURL: "http://p7.zbjimg.com/",
+            UPFILEURLOLD: "http://p6.zbjimg.com/",
+            uploadToken: "ac9fe05b2cbbdfa1f60798ba2c9d5640",
+            qiniuUploadTokenUrl: "http://rms.zhubajie.com"
+        };
+
+
+        //判断是否支持WebP
+        (function(window){
+            if(!window.ZBJInfo.sWebP){
+                var img = new Image();
+                img.onload = img.onerror = function () {
+                    window.ZBJInfo.sWebP = (img.width > 0) && (img.height > 0);
+                };
+                img.src = 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==';
+            }
+        }(window));
+
+        window.alogConfig = {
+            speed: {
+                product: 'zbj',
+//                    page: 'www-index',
+                url: document.location.href
+            }
+        };
+    </script>
+    <script id="seajsnode" type="text/javascript" src="http://t5.zbjimg.com/seajs/seajs/2.1.1/sea.js"></script>
+    <script type="text/javascript" src="http://t5.zbjimg.com/seajs/seajs-style/1.0.0/seajs-style.js"></script>
+    <script type="text/javascript" src="http://t6.zbjimg.com/output/seajs-config-1e18b2d460fcaadb.js"></script>
+
+    <script  type="text/javascript"  src="http://a.zbjimg.com/static/common/seajs-config_03f7a42.js"></script>
+    <script>alog('speed.set', 'ht', +new Date());</script>
+</head>
+<body class="  myzbj t5s">
+<div class="ui-header ibj-header" id="j-zbj-header">
+    <div class="ui-header-top" id="j-header-top">
+        <div class="grid zbj-grid">
+            <div class="fl ui-header-greet">
+                <div class="ui-dropdown">
+                    <a data-linkid="topbar-app" data-process="1" class="ui-dropdown-hd mobiphone" id="j-mobiphone" target="_blank" href="http://app.zbj.com"><i class="wei"></i><span>手机猪八戒</span></a>
+                    <div class="ui-dropdown-menu j_cms_ctn" data-cmstoken="mobile/f930fa8dc97d3593">
+                        <div class="app-download clearfix">
+                            <div class="img"><img src="http://cms.zbjimg.com/mobile/others/erweima1.png" alt=""></div>
+                            <div class="text">
+                                <p>微信扫码<br/>
+                                    随时选购服务
+                                </p>
+                                <a href="http://app.zbj.com/bz/" class="mobile-link-btn" target="_blank">手机猪八戒</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="split">|</span>
+                <a data-linkid="topbar-int" data-process="1" rel="nofollow" href="http://int.zbj.com?utm_source=INT_LuPai&utm_medium=Top&utm_campaign=INT" target="_blank">国际猪八戒</a>
+            </div>
+            <div class="fr ui-header-nav">
+                <a href="http://www.zbj.com/"><i class="highlight iconfont icon-font">&#xe830;</i> 猪八戒首页</a>
+                <span class="split">|</span>
+                        <span id="J-header-logic3" class="item-userinfo">
+                <div class="ui-dropdown">
+                    <a data-linkid="topbar-login" rel="nofollow" data-process="1" href="https://login.zbj.com/login" class="ui-dropdown-hd item-login">登录 <b><i class="iconfont icon-font">&#xe807;</i></b></a>
+                    <ul class="unstyled hezuo-login ui-dropdown-menu">
+                        <li><a data-linkid="topbar-login-zbj" rel="nofollow" data-process="1" href="https://login.zbj.com/login" class="zhubajie">猪八戒账号登录</a></li>
+                        <li><a data-linkid="topbar-login-tb" rel="nofollow" data-process="1" href="https://login.zbj.com/oauth/redirect/act/taobao" class="taob" title="使用淘宝账号登录">淘宝账号登录</a></li>
+                        <li><a data-linkid="topbar-login-wb" rel="nofollow" data-process="1" href="https://login.zbj.com/oauth/redirect/act/sina" class="xinL" title="使用新浪微博账号登录">新浪微博账号登录</a></li>
+                        <li><a data-linkid="topbar-login-qq" rel="nofollow" data-process="1" href="https://login.zbj.com/oauth/redirect/act/QQ" class="qq" title="使用QQ账号登录">QQ账号登录</a></li>
+                    </ul>
+                </div>
+                <span class="split">|</span>
+                <a data-linkid="topbar-reg" rel="nofollow" data-process="1" href="https://login.zbj.com/register" class="item-regx">免费注册</a>
+            </span>
+                <span class="split">|</span>
+                <a data-linkid="topbar-u-order" data-process="1" rel="nofollow" target="_blank" href="http://u.zbj.com/task/order">我的订单</a>
+                <span class="split">|</span>
+                <div class="ui-dropdown">
+                    <a data-linkid="topbar-u-me" data-process="1" rel="nofollow" href="http://u.zbj.com" class="ui-dropdown-hd">我是雇主 <b><i class="iconfont icon-font">&#xe807;</i></b></a>
+                    <ul class="unstyled fr ui-dropdown-menu ui-menu-fix">
+                        <li><a data-linkid="topbar-u-find" data-process="1" target="_blank" href="http://home.zbj.com/">找服务商</a></li>
+                        <li><a data-linkid="topbar-u-release" data-process="1" rel="nofollow" target="_blank" href="http://task.zbj.com/pub/step1">发布需求</a></li>
+                    </ul>
+                </div>
+                <span class="split">|</span>
+            <span id="j-work-status">
+            </span>
+                <div class="ui-dropdown" id="j-need-invite">
+                    <a data-linkid="topbar-u-seller" data-process="1" rel="nofollow" href="http://u.zbj.com/seller/" class="ui-dropdown-hd">我是服务商 <b><i class="iconfont icon-font">&#xe807;</i></b></a>
+                    <ul class="unstyled fr ui-dropdown-menu ui-menu-fix">
+                        <li><a data-linkid="topbar-u-orderctr" data-process="1" rel="nofollow" href="http://u.zbj.com/task/seller" target="_blank">交易管理</a></li>
+                        <li><a data-linkid="topbar-u-shop" data-process="1" rel="nofollow" href="http://shop.zbj.com/8904435" target="_blank">我的店铺</a></li>
+                        <li><a data-linkid="topbar-u-service" data-process="1" rel="nofollow" href="http://u.zbj.com/services/index" target="_blank">我的服务</a></li>
+                        <li><a data-linkid="topbar-u-task" data-process="1" target="_blank" href="http://task.zbj.com/xuqiu/" class="highlight">投标赚钱</a></li>
+                        <li><a data-linkid="topbar-fws" data-process="1" rel="nofollow" target="_blank" href="http://edu.zbj.com/">猪八戒商学院</a></li>
+                        <li><a data-linkid="10015249" data-process="1" rel="nofollow" target="_blank" href="http://u.zbj.com/activity/ActivityListAll?f=user">八戒活动</a></li>
+                        <li><a data-linkid="topbar-qyfws" data-process="1" rel="nofollow" target="_blank" href="http://www.zbj.com/vip" class="highlight">八戒通</a></li>
+                        <li><a data-linkid="topbar-bjtgt" data-process="1" rel="nofollow" target="_blank" href="http://tgt.zbj.com">八戒推广通</a></li>
+                        <li><a data-process="1" rel="nofollow" target="_blank" href="http://zt.zbj.com/bgl/2015-10-27/jingzhuntoufang3.html">至尊标王广告</a></li>
+
+                    </ul>
+                    <!--   <div class="ui-poptipnoc ui-poptipnoc-bottom topbar-seller-tips" style="display: none">
+                          <div class="ui-poptipnoc-arrow"><i></i></div>
+                          <div class="ui-poptipnoc-bd">需求市场搬到这了，快来投标赚钱</div>
+                      </div> -->
+                </div>
+                <span class="split">|</span>
+                <a data-linkid="topbar-u-follow" data-process="1" rel="nofollow" href="http://u.zbj.com/fav/follow?iden=buyer&_t=1397472922605" target="_blank">我的收藏</a>
+                <span class="split">|</span>
+                <a data-linkid="topbar-contact" data-process="1" href="http://help.zbj.com/main/service" target="_blank">联系客服</a>
+                <span class="split">|</span>
+                <div class="ui-dropdown ui-dropdown-multi">
+                    <a data-linkid="topbar-nav" data-process="1" rel="nofollow" href="#none" class="ui-dropdown-hd">网站导航 <b><i class="iconfont icon-font">&#xe807;</i></b></a>
+                    <ul class="unstyled fr ui-dropdown-menu ui-menu-sitemap">
+                        <li class="map-01">
+                            <strong class="map-tit">基础服务</strong>
+                            <div class="map-lnk">
+                                <!--暂时关闭优选-->
+                                <!-- <a data-linkid="topbar-youxuan" data-process="1" rel="nofollow" target="_blank" href="http://youxuan.zbj.com/" class="highlight">优选商城</a> -->
+                                <a target="_blank" href="http://home.zbj.com">服务商库</a>
+                                <a target="_blank" href="http://task.zbj.com">需求大厅</a>
+                                <a target="_blank" href="http://task.zbj.com/success/">案例库</a>
+                            </div>
+                        </li>
+                        <li class="map-02">
+                            <strong class="map-tit">行业市场</strong>
+                            <div class="map-lnk">
+
+                                <a target="_blank" href="http://www.zbj.com/logo/">Logo设计</a>
+
+                                <a target="_blank" href="http://www.zbj.com/xcpsj/">宣传品设计</a>
+
+                                <a target="_blank" href="http://www.zbj.com/uisheji/">UI设计</a>
+
+                                <a target="_blank" href="http://www.zbj.com/wzkf/">网站开发</a>
+
+                                <a target="_blank" href="http://www.zbj.com/ydyykf/">APP开发</a>
+
+                                <a target="_blank" href="http://www.zbj.com/rjkf/">软件开发</a>
+
+                                <a target="_blank" href="http://www.zbj.com/tuiguang/">营销推广</a>
+
+                                <a target="_blank" href="http://www.zbj.com/xiezuo/">文案策划</a>
+
+                                <a target="_blank" href="http://www.zbj.com/wdtg/">网店服务</a>
+
+                                <a target="_blank" href="http://www.zbj.com/cpwgsj/">产品设计</a>
+
+                                <a target="_blank" href="http://www.zbj.com/dhsj/">动画影音</a>
+
+                                <a target="_blank" href="http://gc.zbj.com/">建筑工程</a>
+                            </div>
+                        </li>
+                        <li class="map-03">
+                            <strong class="map-tit">特色市场</strong>
+                            <div class="map-lnk">
+                                <a target="_blank" href="http://shang.zbj.com" class="highlight">八戒悬赏<i></i></a>
+                                <a target="_blank" href="http://bang.zbj.com" class="highlight">八戒众帮<i></i></a>
+                                <!--<a target="_blank" href="http://www.bajiejianzhi.com">八戒兼职</a>-->
+                                <!-- <a target="_blank" href="http://dj.zbj.com/">八戒到家</a> -->
+                                <a target="_blank" href="http://sj.zbj.com/?fr=2015">素材市集</a>
+                                <a target="_blank" href="http://shangbiao.witmart.com/international?utm_source=ZBJHEADERNAV&utm_medium=OVERSEATM&utm_campaign=ZBJ2YBJ" class="highlight" data-linkid="10005501">国际商标注册<i></i></a>
+                                <a target="_blank" href="http://dakehu.zbj.com/" class="align-position">大赛</a>
+                                <a target="_blank" href="http://gszc.zbj.com/?zqz_dh=1" class="highlight" data-linkid="10006546">开办公司<i></i></a>
+                                <div class="clearfix"></div>
+                                <a class="img" target="_blank" href="http://ipr.zbj.com/?_union_uid=7223946&_union_itemid=136888">
+
+                                    <img src="http://cms.zbjimg.com/zscq.png" href="http://www.zhubiaoju.com/" alt="猪标局">
+                                </a>
+                                <a class="img" target="_blank" href="http://www.tianpeng.com/?hmsr=zbj&hmmd=icon&hmpl=navigation&hmkw=&hmci=">
+                                    <img src="http://cms.zbjimg.com/tpw.png" href="http://www.tianpeng.com/?hmsr=zbj&hmmd=icon&hmpl=navigation&hmkw=&hmci=" alt="天蓬网">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="map-04">
+                            <strong class="map-tit">卖家服务</strong>
+                            <div class="map-lnk">
+                                <a target="_blank" href="http://edu.zbj.com/">八戒商学院</a>
+                                <a target="_blank" href="http://u.zbj.com/shangjindai/index">赏金贷</a>
+                                <a target="_blank" href="http://u.zbj.com/bajiedata">八戒数据</a>
+                                <!--<a target="_blank" href="http://u.zbj.com/statistics/index">八戒CRM</a>-->
+                                <a target="_blank" href="http://app.zbj.com/wk/">钉耙APP</a>
+                                <a target="_blank" href="http://u.zbj.com/shop/editIndex">八戒旺铺</a>
+                                <a target="_blank" href="http://tgt.zbj.com/">八戒推广通</a>
+                                <a target="_blank" href="http://www.zbj.com/vip/index/">八戒通</a>
+                                <a target="_blank" data-linkid="10011196" href="http://edu.zbj.com/university/ArticleList?cid=1267">八戒评测</a>
+                                <a target="_blank" href="http://zt.zbj.com/bgl/2015-10-27/jingzhuntoufang3.html">至尊标王广告</a>
+                            </div>
+                        </li>
+                        <li class="map-05">
+                            <strong class="map-tit">八戒资讯</strong>
+                            <div class="map-lnk">
+                                <a target="_blank" href="http://gushi.zbj.com/weike/">威客故事</a>
+                                <a target="_blank" href="http://gushi.zbj.com/guzhu/">雇主故事</a>
+                                <a target="_blank" href="http://gl.zbj.com/">八戒攻略</a>
+                                <a target="_blank" href="http://quanzi.zbj.com/">八戒圈子</a>
+                                <a target="_blank" href="http://news.zbj.com/">八戒动态</a>
+                            </div>
+                        </li>
+                        <li class="map-06">
+                            <strong class="map-tit">交易保障</strong>
+                            <div class="map-lnk">
+                                <a target="_blank" href="http://www.zbj.com/fuwubao/index">服务宝</a>
+                                <a target="_blank" href="http://chengxin.zbj.com">诚信管理中心</a>
+                                <a target="_blank" href="http://help.zbj.com/">帮助中心</a>
+                                <a target="_blank" data-linkid="10011198" href="http://edu.zbj.com/university/ArticleList?cid=1267">八戒评测</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-header-bd-wrap" id="j-ui-header-bd-wrap">
+        <div class="grid zbj-grid ui-header-bd ui-header-hashotwords">
+            <div class="fl ui-logo ">
+                <a data-linkid="logo" data-process="1" href="http://www.zbj.com" title="猪八戒网" class="ui-logo-main">
+                    <img src="http://t6.zbjimg.com/output/global/img/2015/newlogox2.png?new" alt="猪八戒让人民为你服务"/>
+                </a>
+            </div>
+            <div class="fr ui-header-entry"><div id="j-head-pubentry" data-process="1" class="ui-dropdown ui-header-task-entry" data-currguideid=""><a data-linkid="taskentry"  rel="nofollow" target="_blank" href="http://task.zbj.com/pub/step1?from_cid=10001" class="ui-dropdown-hd ui-header-task-entry-link">发布一个需求<b></b></d></a><div class="fr ui-dropdown-menu ui-header-task-panel"><div class="task-panel-hd yahei">发布你的需求，坐等服务商上门</div><div class="task-panel-bd"><ul class="unstyled list-unstyled task-reason"><li class="task-reason-response"><div class="task-reason-title">需求发布后</div><div class="task-reason-desc">1小时内收到服务商响应</div></li><li class="task-reason-join"><div class="task-reason-title">每个需求</div><div class="task-reason-desc">平均有10个服务商参与</div></li><li class="task-reason-result"><div class="task-reason-title">95%以上的需求</div><div class="task-reason-desc">得到了圆满解决</div></li><li class="task-reason-free"><div class="task-reason-title">所有需求</div><div class="task-reason-desc">不向雇主和服务商收取任何佣金</div></li></ul><a data-linkid="taskentry2" rel="nofollow" class="ui-btn ui-btn-inverse ui-header-gotopub zbj-btn zbj-btn-primary" href="http://task.zbj.com/pub/step1?from_cid=10001" target="_blank">立即发布需求</a></div><div class="task-panel-ft clearfix"><div class="fl ui-header-tasklist"><div class="ui-header-tasklist-scroll" id="j-ui-header-tasklist"></div></div><a data-linkid="hall" class="fr ui-header-gototaskhall" target="_blank" href="http://task.zbj.com/">&nbsp;</a></div></div></div></div><div class="fr ui-header-bd-delimiter">或者</div><div class="fr ui-header-search" id="header-search"><form data-process="1" id="j-header-searchform"  action="http://search.zbj.com/s/"  class="ui-form-search"><div class="input-append" style="position: relative;"><div class="ui-dropdown" id="j-header-searchwrap"><span class="ui-dropdown-hd"><span id="j-header-searchlabel">找服务</span><i class="iconfont icon-font">&#xe807;</i></span><ul class="unstyled ui-dropdown-menu"><li data-type="service"><a href="javascript:;" data-linkid="search-type-switch-service">找服务</a></li><li data-type="witkey"><a href="javascript:;" data-linkid="search-type-switch-witkey">找服务商</a></li><li data-type="task"><a href="javascript:;" data-linkid="search-type-switch-task">找需求</a></li><li data-type="comprehensive"><a href="javascript:;" data-linkid="search-type-switch-comprehensive">综合搜索</a></li></ul></div><input data-default="粽子包装" data-type="service" name="kw" value="" id="j-header-kw" type="text"  class="search-query" autocomplete="off" disableautocomplete autocorrect="off" onwebkitspeechchange="this.form.submit();" lang="zh-CN" x-webkit-grammar="builtin:search" x-webkit-speech="true"/><button type="submit" id="j-header-search-btn" class="ui-btn ui-btn-inverse yahei">搜索</button><div id="j-placeholder-tip" style="display: none;" class="placeholder-tip">粽子包装印刷一键搞定，劲爆低价</div></div></form><div class="ui-header-search-hotwords">热门搜索： <a  data-linkid="10006533"  target="_blank"href="http://shop.zbj.com/11498807/">宣传品印刷</a><a  data-linkid="10006534"  target="_blank"href="http://search.zbj.com/s/?kw=logo&type=">LOGO</a><a  data-linkid="1302" class="hot" target="_blank"href="http://www.zbj.com/wdtg/">网店推广</a><a  data-linkid="10011245" class="hot" target="_blank"href="http://www.zbj.com/yxtg/xptc.html">微信推广</a><a  data-linkid="10011246"  target="_blank"href="http://ipr.zbj.com/trademark?_union_uid=7223946&_union_itemid=136949">商标注册</a><a  data-linkid="10006291" class="hot" target="_blank"href="http://zt.zbj.com/bgl/2016-2-25/0ykd.html">0元开网店</a><a  data-linkid="10006494"  target="_blank"href="http://www.zbj.com/dhsj/s.html">动画设计</a><a  data-linkid="10002348"  target="_blank"href="http://www.zbj.com/bzsj/">包装设计</a><a  data-linkid="10012154"  target="_blank"href="http://www.zbj.com/vis/s.html">VI设计</a></div></div></div>
+    </div>
+
+</div>
+<div class="ui-menu nav_uc nosidebar">
+    <div class="grid">
+        <div class="main-wrap">
+            <div class="yahei main">
+                <ul class="inline ui-menu-bd" style="width: 100%;">
+                    <li><a href="http://u.zbj.com/">首页</a></li>
+                    <li class="cur"><a href="http://u.zbj.com/main/index">账号设置</a></li>
+                    <li class=""><a href="http://u.zbj.com/notice/list/">我的消息</a></li>
+                    <li class=""><a href="http://home.zbj.com/8904435/">我的主页</a></li>
+                    <li class="fr each-link"><a href="http://u.zbj.com/witkey/index">我是服务商 >></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="http://u.zbj.com/"><h3 class="category-title"><i class="iconfont myzbjicon">&#xe81c;</i>我是雇主</h3></a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- NULL
+ -->
+
+
+<script type="text/javascript">
+    // window.onload = function(){
+    // seajs.use('components/new-ui-category/index');
+    // };
+</script>
+<script type="text/javascript" src="http://t5.zbjimg.com/t5s/output/uc/js/concat_select-0aba4eadece7881f.js"></script>
+
+<div class="main">
+    <div class="main-con ed-page">
+        <div class="user-ed-bg clearfix">
+            <div class="left-nav">
+                <div class="ln-c">
+                    <div class="nav navt">
+                        <div class="tit "><em></em><p class="pca"><a href="http://u.zbj.com/main/index">我的账号</a></p><i></i></div>
+                        <div class="tit set"><em></em><p class="pcb">个人资料</p><i></i></div>
+                        <ul class="user-ck" style="display:block">
+                            <li class="cka "><p><a href="http://u.zbj.com/mydata/baseinfo">基本信息</a></p></li>
+                            <li class="ckb "><p><a href="http://u.zbj.com/mydata/photo">设置头像</a></p></li>
+                            <li class="ckc cur"><p><a href="http://u.zbj.com/mydata/contact">联系方式</a></p></li>
+                            <li class="ckd "><p><a href="http://u.zbj.com/mydata/workexp">工作经历</a></p></li>
+                            <li class="cke "><p><a href="http://u.zbj.com/mydata/studyxp">学习经历</a></p></li>
+                            <li class="ckl "><p><a href="http://u.zbj.com/mydata/billaddress">邮寄地址</a></p></li>
+                            <li class="ckl"><p><a href="http://shop.zbj.com/8904435/card/" target="_blank">名片</a></p></li>
+                        </ul>
+                        <div class="tit "><em></em><p class="pcc">账号绑定</p><i></i></div>
+                        <ul class="user-ck" >
+                            <li class="cka "><p><a href="http://u.zbj.com/cert/mobile">手机绑定</a></p></li>
+                            <li class="ckb "><p><a href="http://u.zbj.com/cert/email">邮箱绑定</a></p></li>
+                            <li class="ckc "><p><a href="http://u.zbj.com/weibo/index">微博绑定</a></p></li><!--
+				<li class="ckd"><p><a href="#">其他绑定</a></p></li>-->
+                        </ul>
+                        <div class="tit "><em></em><p class="pcd"><a href="http://yan.zbj.com/certification/index-from-t5">身份认证</a></p><i></i></div>
+                        <div class="tit "><em></em><p class="pce">账号安全</p><i></i>
+                        </div>
+                        <ul class="user-ck" >
+                            <li class="cka "><p><a href="http://u.zbj.com/changepass/index">修改登录密码</a></p></li>
+                            <!--<li class="ckb "><p><a href="http://u.zbj.com/safepass/index">设置安全密码</a></p></li>-->
+                            <!--<li class="ckc "><p><a href="https://login.zbj.com/safetool/pwdefend">密保问题</a></p></li>-->
+                            <li class="ckc "><p><a href="https://login.zbj.com/safetool/login">账号登陆保护</a></p></li>
+                            <li class="ckd "><p><a href="https://login.zbj.com/safetool/password">密码修改保护</a></p></li>
+                        </ul>
+                        <div class="tit "><em></em><p class="pcf"><a href="http://u.zbj.com/pay" >支付账户管理</a></p><i></i></div>
+                        <!--<div class="tit"><em></em><p class="pcg"><a href="http://u.zbj.com/witkeyv2/edit" >驻场个性设置</a></p><i></i></div>-->
+
+                        <!--<div class="tit "><em></em><p class="pcd"><a href="http://u.zbj.com/bill/index" >发票管理</a></p><i></i></div>-->
+
+                        <!--<div class="tit"><em></em><p class="pcd"><a href="javascript:;" id="skinset">模版设置</a></p><i></i></div>-->
+                    </div>
+                </div>
+            </div>			<div class="contnet">
+            <div class="cont over-hidden per-infor">
+                <div class="clearfix bind-sche">
+                    <h5 class="bind-tit">联系方式</h5>
+                </div>
+                <form class="work-form mt20" id="work-form" action="/mydata/ContactUpdate" method="post">
+                    <div class="control-group clearfix">
+                        <label class="control-label" for="inputWarning">电子邮箱：</label>
+                        <div class="controls tsa-controls " required placeholder="邮箱" type="email" style="z-index:6">
+                            <span class="fl mt10"><label>113*******@qq.com</label></span>
+                            <input type="hidden" name="email" value="113*******@qq.com">
+                            <!--								<div class="set-visible fl mt5" style="position:relative;">
+                                <input type="hidden" name="mailpri" value="0"/>
+                                <a class="ui-toggle" href="javascript:;"><span>所有人可见<i class="arr-botm"></i></span></a>
+                                <div class="ui-list" style="">
+                                <ul style="">
+                                <li data-value="1"><a href="javascript:;" >仅自己可见</a></li>
+                                <li data-value="0"><a href="javascript:;" >所有人可见</a></li>
+                                </ul>
+                                <iframe></iframe>
+                                </div>
+                            </div>-->
+                            <a href="/cert/email" class="links">修改</a>
+                        </div>
+                    </div>
+                    <div class="control-group clearfix">
+                        <label class="control-label" for="inputWarning">手机号码：</label>
+                        <div class="controls tsa-controls " required placeholder="手机号码" type="tel" style="z-index:5">
+                            <span class="fl mt10"><label>134*****512</label></span>
+
+                            <div class="set-visible fl mt5" style="position:relative;">
+                                <input type="hidden" name="mobipri" value="0"/>
+                                <a class="ui-toggle" href="javascript:;"><span>所有人可见<i class="arr-botm"></i></span></a>
+                                <div class="ui-list" style="">
+                                    <ul style="">
+                                        <li data-value="1"><a href="javascript:;" >仅自己可见</a></li>
+                                        <li data-value="0"><a href="javascript:;" >所有人可见</a></li>
+                                    </ul>
+                                    <iframe></iframe>
+                                </div>
+                            </div>
+                            <a href="/cert/mobile" class="links">修改</a>
+                        </div>
+                    </div>
+                    <div class="control-group clearfix">
+                        <label class="control-label" for="inputWarning">固定电话：</label>
+                        <div class="controls tsa-controls" style="z-index:4">
+                            <span class="ui-form-item" placeholder="区号"><input type="text" class="fl" style="width:50px" name="telac" value=""></span><font class="fl m5" color="#999999">-</font><span class="ui-form-item" placeholder="电话"><input type="text" class="fl" style="width:132px" name="telnum" value=""></span>
+                            <!--								<div class="set-visible mt5" style="position:relative;">
+                                                                <input type="hidden" name="telepri" value="0"/>
+                                                                <a class="ui-toggle" href="javascript:;"><span>所有人可见<i class="arr-botm"></i></span></a>
+                                                                <div class="ui-list" style="">
+                                                                <ul style="">
+                                                                <li data-value="1"><a href="javascript:;" >仅自己可见</a></li>
+                                                                <li data-value="0"><a href="javascript:;" >所有人可见</a></li>
+                                                                </ul>
+                                                                <iframe></iframe>
+                                                                </div>
+                                                            </div>-->
+                        </div>
+                    </div>
+                    <div class="control-group clearfix">
+                        <label class="control-label" for="inputWarning">QQ：</label>
+                        <div class="controls ui-form-item" min="5" required placeholder="QQ号码" style="z-index:3">
+                            <p class="fl"><input type="text" name="qq" value=""></p>
+                            <div class="set-visible mt5" style="position:relative;">
+                                <input type="hidden" name="qqpri" value="0"/>
+                                <a class="ui-toggle" href="javascript:;"><span>所有人可见<i class="arr-botm"></i></span></a>
+                                <div class="ui-list" style="">
+                                    <ul style="">
+                                        <li data-value="1"><a href="javascript:;" >仅自己可见</a></li>
+                                        <li data-value="0"><a href="javascript:;" >所有人可见</a></li>
+                                    </ul>
+                                    <iframe></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group clearfix add-control">
+                        <label class="control-label" for="inputWarning">所在地：</label>
+                        <div class="controls" style="z-index:2">
+                            <!--							  	<iframe src="/mydata/regionselect" class="fl clearfix" style="margin: -5px 0 0 -8px; _margin: -15px 0 0 -10px;" width="600" frameborder="0" height="40" scrolling="no"></iframe>-->
+                            <select  name="province" id="province" name="province" onChange="getcity(this.value)">
+
+                                <option value="" >--请选择省份--</option>
+                                <option value="6560" >北京</option>
+                                <option value="3395" >安徽</option>
+                                <option value="6561" >重庆</option>
+                                <option value="3460" >福建</option>
+                                <option value="3476" >甘肃</option>
+                                <option value="3492" >广东</option>
+                                <option value="3520" >广西</option>
+                                <option value="3534" >贵州</option>
+                                <option value="3546" >海南</option>
+                                <option value="3569" >河北</option>
+                                <option value="3585" >黑龙江</option>
+                                <option value="3601" >河南</option>
+                                <option value="3626" >湖北</option>
+                                <option value="3644" >湖南</option>
+                                <option value="3659" >江苏</option>
+                                <option value="3686" selected>江西</option>
+                                <option value="3700" >吉林</option>
+                                <option value="3712" >辽宁</option>
+                                <option value="3729" >内蒙古</option>
+                                <option value="3742" >宁夏</option>
+                                <option value="3748" >青海</option>
+                                <option value="3758" >山东</option>
+                                <option value="7275" >上海</option>
+                                <option value="3802" >山西</option>
+                                <option value="3816" >陕西</option>
+                                <option value="3828" >四川</option>
+                                <option value="7276" >天津</option>
+                                <option value="3896" >新疆</option>
+                                <option value="3916" >西藏</option>
+                                <option value="3924" >云南</option>
+                                <option value="3945" >浙江</option>
+                                <option value="6563" >台湾</option>
+                                <option value="6564" >香港</option>
+                                <option value="6566" >澳门</option>
+                                <option value="6567" >钓鱼岛</option>
+                            </select>
+                            <select class="ml5" name="city" id="city" onChange="gettown(this.value,null,'change')" >
+                                <option value="">--请选择城市--</option>
+                            </select>
+                            <select class="ml5" id="town" name="town"  style="display:none;">
+                                <option value="">---请选择地区---</option>
+                            </select>
+                            <!--									<div class="set-visible" style="position:relative;margin-top:-5px">
+                                                                    <input type="hidden" name="addrpri" value="0"/>
+                                                                    <a class="ui-toggle" href="javascript:;"><span>所有人可见<i class="arr-botm"></i></span></a>
+                                                                    <div class="ui-list" style="">
+                                                                    <ul style="">
+                                                                    <li data-value="1"><a href="javascript:;" >仅自己可见</a></li>
+                                                                    <li data-value="0"><a href="javascript:;" >所有人可见</a></li>
+                                                                    </ul>
+                                                                    <iframe></iframe>
+                                                                    </div>
+                                                                </div>-->
+                        </div>
+                    </div>
+                    <div class="control-group clearfix">
+                        <label class="control-label" for="inputWarning">详细地址：</label>
+                        <div class="controls tsa-controls ui-form-item" min="4" required placeholder="地址">
+                            <p class="fl"><input type="text" class="fl" style="width:350px" id="address" name="address" value="" ></p>
+                            <input id="coordinate" type="hidden" name="coordinate" value=""/><!--仅为度-->
+                            <a href="javascript:;" class="links" id="map_locate">在地图中标注</a>
+                        </div>
+                    </div>
+                    <p class="save-btn"><button class="butn butn-orange" id="save"><i></i>保存</button></p>
+                </form>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+<div class="j_cms_ctn" style='text-align:center;margin:18px auto;'  data-cmstoken="global/03d69f9c6a89ec3f"></div>
+
+<input name="ab_sid" value="" type="hidden"/>
+<input name="catagory_id" value="" type="hidden"/>
+<div class="ui-footer" >
+    <div class="ui-footer-hd clearfix">
+        <div class="grid zbj-grid">
+            <dl class="item-new">
+                <dt>新手指南</dt>
+                <dd><a data-linkid="footer-reg" rel="nofollow" target="_blank" href="https://login.zbj.com/register/">注册新用户</a></dd>
+                <dd><a data-linkid="footer-guide" rel="nofollow" target="_blank" href="http://www.zbj.com/main/guide/">雇主入门</a></dd>
+                <dd><a data-linkid="footer-fws" rel="nofollow" target="_blank" href="http://www.zbj.com/newhandguide/index/">服务商入门</a></dd>
+                <dd><a data-linkid="footer-rule" rel="nofollow" target="_blank" href="http://chengxin.zbj.com/report/rule-g-2317">规则中心</a></dd>
+                <!-- <dd><a data-linkid="footer-make" rel="nofollow" target="_blank" href="http://chuangzao.zbj.com/">猪八戒创造</a></dd>-->
+            </dl>
+            <dl class="item-buyer">
+                <dt>我是雇主</dt>
+                <dd><a data-linkid="footer-task" rel="nofollow" target="_blank" href="http://task.zbj.com/pub/?from_cid=10001">发布需求</a></dd>
+                <dd><a data-linkid="footer-home" target="_blank" href="http://home.zbj.com/">挑选服务商</a></dd>
+                <dd><a data-linkid="footer-sj" target="_blank" href="http://sj.zbj.com/">购买设计作品</a></dd>
+                <dd><a data-linkid="footer-kuaiyin" target="_blank" href="http://shop.zbj.com/11498807">成品印刷</a></dd>
+                <dd><a data-linkid="footer-gz-story" target="_blank" href="http://gushi.zbj.com/guzhu/">雇主故事</a></dd>
+                <dd><a data-linkid="10011195" target="_blank" href="http://edu.zbj.com/university/ArticleList?cid=1267">八戒评测</a></dd>
+            </dl>
+            <dl class="item-saler">
+                <dt>我是服务商</dt>
+                <dd><a data-linkid="footer-wikeyentrance" rel="nofollow" target="_blank" href="http://edu.zbj.com/university/ArticleList?cid=1223">投标赚钱</a></dd>
+                <dd><a data-linkid="footer-vip" target="_blank" href="http://edu.zbj.com/university/ArticleList?cid=1225">开店赚钱</a></dd>
+                <dd><a data-linkid="footer-edu" target="_blank" href="http://edu.zbj.com/university/ArticleList?cid=1230">赚钱利器</a></dd>
+                <dd><a data-linkid="footer-fwszn" rel="nofollow" target="_blank" href="http://edu.zbj.com/university/ArticleList?cid=1284">互动取经</a></dd>
+                <dd><a data-linkid="10015250" rel="nofollow" target="_blank" href="http://u.zbj.com/activity/ActivityListAll?f=user">八戒活动</a></dd>
+                <dd><a data-linkid="10011193" target="_blank" href="http://edu.zbj.com/university/ArticleList?cid=1267">八戒评测</a></dd>
+            </dl>
+            <dl class="item-safe">
+                <dt>交易保障</dt>
+                <dd><a data-linkid="footer-xiaobao" rel="nofollow" target="_blank" href="http://task.zbj.com/xiaobao/intro">猪八戒担保交易</a></dd>
+                <dd><a data-linkid="footer-chengxin" rel="nofollow" target="_blank" href="http://chengxin.zbj.com/">争议仲裁</a></dd>
+                <dd><a data-linkid="footer-gzfangpian" rel="nofollow" target="_blank" href="http://quanzi.zbj.com/main/topic-qid-5216-tid-440857">雇主防骗</a></dd>
+                <dd><a data-linkid="footer-fwsfangpian" rel="nofollow" target="_blank" href="http://quanzi.zbj.com/main/topic-qid-1134-tid-382782">服务商防骗</a></dd>
+                <dd><a data-linkid="footer-fws-zb" target="_blank" href="http://www.zbj.com">众包平台</a></dd>
+            </dl>
+            <dl class="item-app">
+                <dt>全程保障交易安全</dt>
+                <dd>
+                    <a data-linkid="footer-newsecurity" rel="nofollow" href="http://www.zbj.com/fuwubao" target="_blank" title="放心交易">
+                        <img style="margin-top:5px;" src="http://t5.zbjimg.com/t5s/common/img/fuwubao/fwb-bottom.png" alt="放心交易">
+                    </a>
+                </dd>
+            </dl>
+            <dl class="item-contact">
+                <dd class="item-chat">
+                    <a data-linkid="footer-chat" rel="nofollow" target="_blank" href="http://help.zbj.com/main/service">
+                        <i class="ui-ico ui-ico-cs-h">联系客服</i>
+                    </a>
+                    <!--<div class="zbj-poptip zbj-poptip-bottom zbj-bottomtip-pos">-->
+                    <!--<div class="zbj-poptip-arrow zbj-bottom-arrow"><i></i></div>-->
+                    <!--<div class="zbj-poptip-bd zbj-bottomtip">在线客服的工作时间为周一至周五 9:00-18:00</div>-->
+                    <!--</div>-->
+                </dd>
+                <dd class="item-sns">
+                    <a data-linkid="footer-wb" target="_blank" href="http://weibo.com/zhubajiewang"><i class="ui-ico ui-ico-sina"></i></a>
+                    <a data-linkid="footer-qq" target="_blank" href="http://t.qq.com/zhubajie"><i class="ui-ico ui-ico-qq"></i></a>
+                    <!-- <a data-linkid="footer-sh" rel="nofollow" target="_blank" href="http://t.sohu.com/u/108262596"><i class="ui-ico ui-ico-sohu"></i></a> -->
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="grid zbj-grid ui-footer-bd">
+        <div class="ui-footer-sitelink">
+            <a data-linkid="footer-about" rel="nofollow" href="http://www.zbj.com/about/index.html" target="_blank">关于我们</a><span class="split">|</span>
+            <a data-linkid="footer-contact" rel="nofollow" href="http://www.zbj.com/about/contactus.html" target="_blank">联系方式</a><span class="split">|</span>
+            <a data-linkid="footer-news" href="http://news.zbj.com" target="_blank">八戒动态</a><span class="split">|</span>
+            <a data-linkid="footer-map" href="http://www.zbj.com/main/map/" target="_blank">网站地图</a><span class="split">|</span>
+            <a data-linkid="footer-gszz" rel="nofollow" href="http://www.zbj.com/zizhi/gszz.html" target="_blank">公司资质</a><span class="split">|</span>
+            <a data-linkid="footer-join" rel="nofollow" href="http://job.zbj.com/" target="_blank">加入我们</a><span class="split">|</span>
+            <a data-linkid="footer-pay" rel="nofollow" href="http://www.zbj.com/about/payment.html" target="_blank">支付方式</a><span class="split">|</span>
+            <a data-linkid="footer-hz" rel="nofollow" href="http://zt.zbj.com/ztold/zbjhezuo/" target="_blank">我也要与猪八戒网合作</a><span class="split">|</span>
+            <a data-linkid="footer-charlist" target="_blank" href="http://search.zbj.com/charlist/index.html">热门服务</a><span class="split">|</span>
+            <a data-linkid="footer-charlist" target="_blank" href="http://www.zbj.com/link/">友情链接</a><span class="split">|</span>
+            <a target="_blank" href="http://sec.zbj.com/">安全中心</a><span class="split">|</span>
+            <a data-linkid="footer-m" href="http://m.zbj.com/">猪八戒网移动版</a>
+        </div>
+        <!--优选商城-首页-友情链接-->
+        <!--优选商城-首页-友情链接-->
+        <p class="gray ui-footer-copyright">
+            Copyright 2005-2016 zbj.com  版权所有  <a rel="nofollow" href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">渝ICP备10202274-1号</a> <a rel="nofollow" href="http://www.cqca.gov.cn/" target="_blank" rel="nofollow">渝B2-20080005</a>
+        </p>
+        <div class="ui-footer-gov">
+            <a data-linkid="footer-ebs"  href="http://www.cqgseb.cn/ztgsgl/WebMonitor/GUILayer/eImgMana/dztbInfo.aspx?sfdm=120090611153726046127" target="_blank" rel="nofollow">
+                <img src="http://t5.zbjimg.com/r/page/ebs.png" alt="市场监督管理局企业主体身份公示"><span class="item-txt">工商网监电子标识</span>
+            </a>
+            <a data-linkid="footer-xfz" rel="nofollow" href="http://www.cqgseb.cn/ztgsgl/WebSiteMonitoring/WebUI/XFWQ/Index.aspx?xh=19" target="_blank" rel="nofollow">
+                <img src="http://t5.zbjimg.com/r/page/xfz.jpg" alt="消费维权服务"><span class="item-txt">消费者维权服务站</span>
+            </a>
+            <a data-linkid="footer-cnnic" rel="nofollow" href="http://kxlogo.knet.cn/verifyseal.dll?sn=e13091311010042477ead0000000" target="_blank" rel="nofollow">
+                <img src="http://t5.zbjimg.com/t5s/lib/img/time_cnnic.jpg" width="128" height="47" alt="可信网站身份验证"><span class="item-txt">可信网站身份验证</span>
+            </a>
+            <a id='___szfw_logo___' rel="nofollow" href='https://credit.szfw.org/CX20150930011538030188.html' target='_blank'>
+                <img src='http://t5.zbjimg.com/t5s/lib/img/chengxin.png' border='0' width="130" height="47" />
+            </a>
+            <script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
+            <a class="reportform" rel="nofollow" href='http://jubao.china.cn:13225/reportform.do' target='_blank'>
+                暴恐音视频举报专区<br/>互联网违法和不良信息举报中心
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    window.WEBIMCONFIG = {
+        host:"http://webim.zbj.com:32768",
+        getbrandnameurl:"http://u.zbj.com/ajax/getbrandname",
+        userHost : "http://u.zbj.com",
+        filterUrl : "http://task.zbj.com/api/filter",
+        getAboutUrl :"http://task.zbj.com/api/urltitle",
+        defaultIcon : 'http://t4.zbjimg.com/r/p/task/48.gif',
+        rulepage : 'http://help.zbj.com/1037.html'
+    }
+</script>
+
+
+<script src="http://t5.zbjimg.com/min/?f=base.js,product/common.js,org/cookie.js,product/topbar.js,module/tips.js,product/page/index.js,module/verify.js,org/map.js,product/fixed.js&v=0805" type="text/javascript"></script>
+<script>
+    //菜单
+    var nav = $(".ln-c").find(".nav"),nset = nav.find(".set");
+    nav.find(".user-ed .user-ck").hide();
+    nset.next(".user-ck").show();
+    nav.find(".tit").click(function(){
+        nav.find(".tit").removeClass("set").next(".user-ck").hide();
+        $(this).toggleClass("set").next(".user-ck").toggle();
+    });
+
+    $('.alert-success').length && $('.alert-success .close').click(function(){
+        $('.alert-success').hide();
+    });
+
+</script>
+
+<script type="text/javascript">
+    //compressed from v5style/mirror/static/watchcdn.snippet.js
+    (function(){
+        function watchCDNStatus(){function e(e){var t=new Image
+            t.src=a+"?"+e}function t(e){return e.replace(/\.|\//,function(e){return"\\"+e})}function i(e){var t=document.cookie,i=t.indexOf(" "+e+"=")
+            if(-1==i&&(i=t.indexOf(e+"=")),-1==i)t=null
+            else{i=t.indexOf("=",i)+1
+                var n=t.indexOf(";",i);-1==n&&(n=t.length),t=unescape(t.substring(i,n))}return t}function n(){var e=document.location.href,t=i("userid"),n=o(),r="url="+encodeURIComponent(e)+"&uid="+t
+            return r+="&os="+n.os,r+="&browser="+n.browser,r+="&version="+n.version,r+="&level=20&type=static"}function o(){var e,t,i,n=window.navigator.userAgent,o=window.navigator.platform
+            return/MSIE/.test(n)?(e="Internet Explorer",/IEMobile/.test(n)&&(e+=" Mobile"),i=/MSIE \d+[.]\d+/.exec(n)[0].split(" ")[1]):/Chrome/.test(n)?(e="Chrome",i=/Chrome\/[\d\.]+/.exec(n)[0].split("/")[1]):/Opera/.test(n)?(e="Opera",/mini/.test(n)?e+=" Mini":/Mobile/.test(n)&&(e+=" Mobile")):/Android/.test(n)?(e="Android Webkit Browser",mobile=!0,t=/Android\s[\.\d]+/.exec(n)):/Firefox/.test(n)?(e="Firefox",/Fennec/.test(n)&&(e+=" Mobile"),i=/Firefox\/[\.\d]+/.exec(n)[0].split("/")[1]):/Safari/.test(n)&&(e="Safari",(/iPhone/.test(n)||/iPad/.test(n)||/iPod/.test(n))&&(t="iOS")),i||(i=/Version\/[\.\d]+/.exec(n),i=i?i[0].split("/")[1]:/Opera\/[\.\d]+/.exec(n)[0].split("/")[1]),"MacIntel"===o||"MacPPC"===o?(t="Mac OS X "+/10[\.\_\d]+/.exec(n)[0],/[\_]/.test(t)&&(t=t.split("_").join("."))):"Win32"===o?t="Windows 32 bit":"Win64"==o?t="Windows 64 bit":!t&&/Linux/.test(o)?t="Linux":!t&&/Windows/.test(n)&&(t="Windows"),{browser:e,version:i,os:t}}if(void 0===window.ZDK){var r=document.location.href,s=RegExp("http:\\/\\/task\\."+t(ZBJInfo.baseURI)+"\\/\\d+")
+            if(s.test(r)){var a="http://slogger."+ZBJInfo.baseURI+"/",d=n()
+                e(d)}}}watchCDNStatus()
+    })();
+    $(function(){
+    });
+
+    window.PUBCONFIG = {
+        PUBURI:　"http://task.zbj.com/pub",
+        TITLEURI: "http://task.zbj.com/api/searchtitle",
+        INVITEURI: "http://task.zbj.com/api/searchfriend",
+        LABELURI: "http://task.zbj.com/api/searchtag",
+        ADDLABELURI: "http://task.zbj.com/api/addtag",
+        UPLOADURI: "http://task.zbj.com/pub/uploadnew",
+        WORKUPLOADURI: "http://task.zbj.com/pub/uploadnew-key-1.html",
+        PROGRESSURI: "http://task.zbj.com/pub/progress",
+        SEVPUBURI:"http://u.zbj.com/services/pub",
+        SEVUPLOADURI:"http://u.zbj.com/services/upload?t=1",
+        SEVVIDEOURI:"http://u.zbj.com/services/video",
+        SEVMUSICURI:"http://u.zbj.com/services/music",
+        SEVGRESSURI:"http://u.zbj.com/services/progress",
+        ATSOMEBODY : "http://task.zbj.com/api/atfollow/?num=10&jsonp=?",
+        SETBOUNSURL:"http://www.zbj.com/list/setbonus",
+        ALLOTURL:"http://www.zbj.com/list/allot",
+        SEARCHURL:"http://search.zbj.com",
+        pubcatalogURL:"http://u.zbj.com/ajax/getcategoryfws"
+    };
+    window.COMMONURI = {
+        ATTENTION: "http://task.zbj.com/api/follow",
+        FAVORITE: "http://task.zbj.com/api/favorite",
+        THINKS: "http://task.zbj.com/api/thinks",
+        HUANHUAN: "http://task.zbj.com/api/getinterest",
+        USERCARD: "http://task.zbj.com/api/getusertips",
+        REPLY: "http://task.zbj.com/api/reply",
+        LISTRELOAD: "http://www.zbj.com/main/show"
+    }
+    document.domain = "zbj.com";
+</script>
+<script type="text/javascript" src="http://t5.zbjimg.com/t5s/output/pkg/common/js/global4oldpage-5a4c6773e5d475e8.js"></script>
+
+<script src="http://t5.zbjimg.com/c/product/webim/socket.io.js?20140324"></script>
+<script src="http://t5.zbjimg.com/c/product/webim/WebIM.max.js?20140324"></script>
+<script src="http://t5.zbjimg.com/c/product/webim/WebIM.UI.max.js??new2015"></script>
+</body>
+</html>
+<script type="text/javascript" src="http://t5.zbjimg.com/t5s/output/common/js/count-706ccc8edc21ece4.js"></script>
+
+<script type="text/javascript">
+</script>
+
+<script src="http://t5.zbjimg.com/t5s/output/common/js/module/slide.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var arr = [];
+        function tplSlide(starget, prevbtn, nextbtn) {
+
+            ZDK.define(function (require) {
+                require('module.slider');
+                var slider = ZDK.module.slide({
+                    target: $(starget),
+                    item: "a",
+                    size: 1,
+                    step: 1,
+                    time: 400,
+                    timeout: 4000,
+                    path: false,
+                    oninited: function(slide){
+                        var $elem = $('.fws_slider_nav');
+                        slide.cur = $elem.find('a').hover(function(){
+                            var $this = $(this);
+                            var index = $this.index();
+                            slide.play(index);
+                        });
+                    }
+
+                }).on("play",function(data){
+                    var index = data.index;
+                    data.target.cur.eq(index).addClass('active').siblings('.active').removeClass('active');
+                });;
+                return slider;
+            });
+        }
+        arr.push(tplSlide(".fws_slider"));
+    })
+</script>
+<script>
+    if ( window.alog ) {
+        alog('speed.set', 'drt', +new Date());
+
+        alog('set', 'alias', {
+            speed: "http://t6.zbjimg.com/jquery/alog/speed.js"
+        });
+        alog('require', 'speed');
+    }
+</script>
+
+<script type="text/javascript">
+    //绑定身份类型内容选择
+    getcity(3686,3687);
+    gettown(3687,0);
+</script>
+<script>
+    ZDK.lazy(function(){
+        //可见性
+        $('.set-visible').click(function(){
+            var $this = $(this);
+            $this.find('div.ui-list').show().prev("a").addClass("hover");
+
+            return false;
+        });
+        $('.set-visible ul li').click(function(){
+            var $this=$(this);
+            var target = $this.parent().parent().parent();
+            var value = $this.attr('data-value');
+            target.find('div.ui-list').hide().prev("a").removeClass("hover");
+            var html = $this.find('a').html();
+            target.find('span').html(html+'<i class="arr-botm"></i>');
+            target.find('input').val(value);
+            return false;
+        });
+        $(document).click(function(){
+            $('.set-visible div.ui-list').hide().prev("a").removeClass("hover");
+        });
+
+        UDingmap({target:$('#map_locate')});
+        var verify = ZDK.module.verify({
+            target: $('#work-form'),
+            button: $('#save'),
+            errorClass: 'error',
+            successClass: 'success',
+            warningClass: 'warning',
+            asynClass: 'loading',
+            holderLeft: 10,
+            holderTop: 10
+        });
+        verify.on('submitBefore',function(){
+
+            $.ajax({
+                url: $('#work-form').attr('action'),
+                data: $('#work-form').serialize(),
+                type:'post',
+                dataType:'json',
+                success: function(json){
+                    if(json.state == 1){
+                        ZDK.Tips(json.msg,1000,'success');
+                        if (json.url !== undefined) {
+                            window.location.href= json.url;
+                        } else {
+                            location.reload();
+                        }
+                    } else {
+                        ZDK.Tips(json.msg,1000,'error');
+                    }
+                }
+            });
+            return false;
+        })
+
+    });
+
+    //选择地址
+    (function(){
+
+        var province = $('#province');
+        var city = $('#city');
+        var cityval=provinceval=townval='';
+        var town = $('#town');
+        var address = $('#address');
+        var zxCity = ['6561','6560','7275','7276'];
+        provinceval = '江西';
+        cityval = '南昌';
+        province.bind('change',function(){
+            city.show();
+            var val = this.options[this.selectedIndex].text;
+            if(/--/.test(val)){
+                val = '';
+            }
+            provinceval = val;
+            address.val(val);
+            address.focus();
+            town.get(0).options.length = 0;
+            document.getElementById('town').options.add(new Option('---请选择地区---',''));
+        });
+        city.bind('change',function(e){
+            var val = this.options[this.selectedIndex].text;
+            var provinceId = province.val();
+            if(/--/.test(val)){
+                val = '';
+            }
+            if($.inArray(provinceId,zxCity) != -1){
+                val = '';
+            }
+            cityval = val;
+            address.val(provinceval+val);
+        });
+        town.bind('change',function(){
+            var val = this.options[this.selectedIndex].text;
+            var provinceId = province.val();
+            if(/--/.test(val)){
+                val = '';
+            }
+            if($.inArray(provinceId,zxCity) != -1){
+                cityval = '';
+            }
+            address.val(provinceval+cityval+val);
+        });
+    })();
+</script>

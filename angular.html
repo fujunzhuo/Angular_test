@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.110.2.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular-animate.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<!--
+<input type="text" data-ng-model="name1" data-ng-init="name1='default'">
+
+<input type="text" ng-model="firstName" ng-init="firstName='firstName'" ><br>
+<input type="text" ng-model="lastName" ng-init="lastName='lastName'" ><br>
+
+<h1>Hello {{firstName}}</h1>
+<h1>Hello {{lastName}}</h1>
+
+<div ng-bind="firstName+'&emsp;'+lastName"></div>
+计算
+<div>{{99*1878}}</div>
+-->
+<div>
+
+    <!--js定义变量-->
+    <!--
+   姓： <input type="text" ng-model="firstName"><br>
+   名： <input type="text" ng-model="lastName"><br>
+
+    姓名；{{firstName + " " + lastName}}
+    -->
+</div>
+    <!--赋值-->
+    <!--
+    <div ng-init="quantity=15;cost=5">{{quantity*cost}}</div>
+    <div ng-bind="{{quantity*cost}}"></div>
+
+    <div ng-init="quantity1='java';cost1='python'">{{quantity1+''+cost1}}</div>
+    <div ng-bind="quantity1+''+cost1"></div>
+    -->
+    <!--绑定对象-->
+    <!--
+    <div ng-init="person={firstName:'John',lastName:'Doen'}"></div>
+    <h1>{{person.lastName}}</h1>
+    <h1 ng-bind="person.firstName"></h1>
+    -->
+
+    <!--绑定数组-->
+    <!--
+    <div ng-init="points=[1,15,19,2,40]"></div>
+    <p>{{points[2]}}</p>
+    -->
+
+    <!--遍历数组
+    <div ng-init="names=['Jani','Hege','Kai']"></div>
+    <ul>
+        <li ng-repeat="x in names">{{x}}</li>
+    </ul>
+    -->
+<!--遍历对象-->
+<!--
+<div ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}
+]"></div>
+<ul>
+    <li ng-repeat="x in names">{{x.name + ',' +x.country}}</li>
+</ul>
+-->
+
+<!--angularjs实例-->
+<!--
+<div ng-controller="tagCtrl">
+    <test-tag></test-tag>
+    <div test-tag></div>
+    <div class="test-tag"></div>
+     test-tag
+</div>
+-->
+
+<!--邮箱验证-->
+<!--
+<form action="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+</form>
+-->
+<!--显示状态值-->
+<!--
+<form action="" name="myForm" ng-init="myText = 'test@runoob.com'">
+    Email:
+    <input type="email" name="myAddress" ng-model="myText" required>
+    <h1>状态</h1>
+    {{myForm.myAddress.$valid}}
+    {{myForm.myAddress.$dirty}}
+    {{myForm.myAddress.$touched}}
+</form>
+-->
+<!--根据值的状态 修改相应css
+ng-empty
+ng-not-empty
+ng-touched
+ng-untouched
+ng-valid
+ng-invalid
+ng-dirty
+ng-pending
+ng-pristine
+-->
+<!--
+<style>
+    input.ng-invalid{
+        background: red;
+    }
+</style>
+<form action="" name="myForm">
+    <input name="myAddress" ng-model="text" required>
+</form>
+-->
+<!--
+过滤器
+currency	格式化数字为货币格式。
+filter	从数组项中选择一个子集。
+lowercase	格式化字符串为小写。
+orderBy	根据某个表达式排列数组。
+uppercase	格式化字符串为大写。
+-->
+<!--
+<div ng-bind="fullName()|uppercase"></div>
+<div ng-bind="fullName()|lowercase "></div>
+<p>总价 = {{ (100 * 25475) | currency }}</p>
+<ul>
+    <li ng-repeat="x in names | filter:test | orderBy:'country'">
+        {{(x.name | uppercase) +','+(x.country|lowercase)}}
+    </li>
+</ul>
+
+<h1>{{url}}</h1>
+<h1>{{myWelcome}}</h1>
+<h3>{{myHeader}}</h3>
+<div class="time"></div>
+
+<h3>{{hex}}</h3>
+
+<div ng-init="counts=[465846518,135476813684,315468768132146,314646134846]"></div>
+<h5 ng-repeat="x in counts">{{x }}</h5>
+<h3>{{names}}</h3>
+<h3>{{myWelcome1}}</h3>
+
+
+<select ng-model="selectedName1" ng-options="x for x in option"></select>
+
+<h1>{{selectedName1}}</h1>
+<select ng-model="selectedName" ng-options="x.site for x in sites"></select>
+
+<h1>{{selectedName.site}}</h1>
+<h1>{{selectedName.url}}</h1>
+
+<select ng-model="selectedSite" ng-options="y for (x,y) in sitesObj"></select>
+
+<h3>{{selectedSite}}</h3>
+
+<select ng-model="selected" ng-options="y.brand for (x,y) in cars"></select>
+<h1>{{selected.color}}</h1>
+<h1>{{selected.model}}</h1>
+-->
+<!--
+<ul>
+    <li ng-repeat="x in names | orderBy : 'Name'">
+       {{$index + 1}} 、{{x.Name}}、 {{x.Country|uppercase}}
+
+        <p ng-if="$even" style="background: blue">上面是基数行</p>
+        <p ng-if="$odd" style="background: red">上面是偶数行</p>
+
+    </li>
+</ul>
+-->
+<!--
+<div ng-init="mySwitch=true">
+    <button ng-disabled="mySwitch">点我！</button>
+    <button type="checkbox" ng-model="mySwitch">按钮</button>
+    <input type="text"value="{{mySwitch}}">
+    <p>{{ mySwitch }}</p>
+    <p ng-show="true">我是不可见的</p>
+    <p ng-init="testNumber=11"></p>
+    <p ng-if="testNumber>10">testNumeber>10</p>
+    <p ng-show="testNumber>10">ng-show</p>
+    <p ng-hide="true">ng-hide</p>
+    <p ng-click="count = count + 1">ng-click</p>
+    <p ng-click="alert()">$scope.alert</p>
+    <p>{{count}}</p>
+</div>
+
+
+<button ng-click="toggle()">显示/隐藏</button>
+<p ng-hide="myVar">
+    名：<input type="text" ng-model="firstName">
+    姓名：<input type="text" ng-model="lastName"> <br>
+    Full Name : {{firstName + '' + lastName}}
+</p>
+
+
+<div run-dir></div>
+
+novalidate禁用h5的默认验证
+
+<form novalidate>
+    First Name: <br>
+    <input type="text" ng-model="user.firstName"><br>
+    Last Name: <br>
+    <input type="text" ng-model="user.lastName">
+    <br><br>
+    <button ng-click="reset()">RESET</button>
+</form>
+
+<p>form = {{user}}</p>
+<p>master = {{master}}</p>
+
+$dirty - 规定值已被改变。
+
+$invalid- 该值的状态是无效的。
+
+$error- 指出确切的错误。
+
+$dirty	表单有填写记录
+$valid	字段内容合法的
+$invalid	字段内容是非法的
+$pristine	表单没有填写记录
+-->
+<!--
+<form name="myForm" novalidate>
+    <p>用户名：<br>
+        <input type="text" name="user" ng-model="user" required>
+        <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+            <span ng-show="myForm.user.$error.required">用户名是必须的。</span>
+        </span>
+
+    </p>
+
+    <p>邮箱：<br>
+        <input type="email" name="email" ng-model="email" required>
+        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+            <span ng-show="myForm.email.$error.required">邮箱是必须的。</span>
+            <span ng-show="myForm.email.$error.email">非法的邮箱。</span>
+
+        </span>
+
+    </p>
+
+    <p>
+        <input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid">
+    </p>
+
+</form>
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+<h1>{{email}}</h1>
+<h1 ng-bind="email"></h1>
+<input type="text" ng-model="email">
+<div class="include" ng-include="'mywelcome.html'"></div>
+-->
+
+
+<style>
+    .checkbox1 {
+        transition: all linear 0.5s;
+        background-color: lightblue;
+        height: 100px;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .ng-hide {
+        transition: all linear 0.5s;
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top:-200px;
+        left: 200px;
+    }
+
+</style>
+
+
+        <input type="checkbox" ng-model="myCheck">
+        <div ng-hide="myCheck" class="checkbox1">aa</div>
+        <!--
+            ngAnimate 添加或移除class指令
+            ng-show
+            ng-hide
+            ng-class
+            ng-view
+            ng-include
+            ng-repeat
+            ng-if
+            ng-switch
+        -->
+</div>
+
+
+
+<script>
+    /*
+    var appa = angular.module('ngAnimate',[]);
+    appa.controller('animate',function($scope){
+
+    });*/
+
+
+
+
+
+
+    var app = angular.module('myApp',['ngAnimate']);
+
+    app.directive('runDir',function(){
+        return {
+            template : '我在指令构造器中创建',
+        }
+    });
+
+
+    app.controller('myCtrl',function($scope,$rootScope,$location,$http,$timeout,$interval,hexafy){
+        $scope.$watch('email',function(newValue,oldValue,scope){
+            //$('body').append('<br>oldValue:'+oldValue+'<br>');
+            //$('body').append('newValue:'+newValue+'<hr><br>');
+            //console.log(scope);
+        });
+
+
+        $scope.user = 'John Doe';
+        $scope.email = 'HHjohn.doe@gmail.com';
+        $scope.email = angular.lowercase($scope.email);
+
+        //alert(angular.uppercase('sadfsaf'));//转换字符串为大写
+        //alert(angular.isString(123));//判断是否为字符串
+        //alert(angular.isNumber(46));//判断给定的对象是否为数字
+
+
+
+        $scope.master = {firstName:'John',lastName:'Doe'};
+        $scope.reset = function(){
+            $scope.user1 = angular.copy($scope.master);
+        };
+        $scope.reset();
+
+
+        $scope.firstName = 'John';
+        $scope.lastName = 'Doe';
+        $rootScope.golble = '123';//可在所有控制器中使用
+        $scope.myVar = false;
+        $scope.toggle = function(){
+            $scope.myVar = !$scope.myVar;
+        };
+        $scope.fullName = function(){
+            return $scope.firstName +''+$scope.lastName;
+        };
+        $scope.names = [
+            {name:'Jani',country:'Norway'},
+            {name:'Hege',country:'Sweden'},
+            {name:'Kai',country:'Denmark'},
+            {name:534365*231451234,country:53453},
+        ];
+        $scope.number = [465465,'sdfsadf','!@#$$21','146848'];
+        $scope.url = $location.absUrl();
+        $http.get('mywelcome.html').then(function(response){
+            $scope.myWelcome = response.data;
+            //console.log(response);
+        });
+        $timeout(function(){
+            $scope.myHeader = 'How are you today?';
+        },2000);
+
+        $interval(function(){
+            $('.time').html(new Date().getSeconds());
+        },1000);
+
+
+        $scope.hex = hexafy.myFunc(255);
+
+        /*$http.get('http://www.baidu.com').then(function(response){
+            $scope.baidu = response.data;
+        });*/
+
+
+        $http.get('json').success(function(response){
+            $scope.names = response.records;
+            //console.log(response);
+        });
+
+        $scope.option = ['Google','Runoob','Taobao'];
+        $scope.sites = [
+            {site : "Google", url : "http://www.google.com"},
+            {site : "Runoob", url : "http://www.runoob.com"},
+            {site : "Taobao", url : "http://www.taobao.com"}
+        ];
+        $scope.sitesObj = {
+            site1 : "Google",
+            url1 : "http://www.google.com",
+            site2 : "Runoob",
+            url2 : "http://www.runoob.com",
+            site3 : "Taobao",
+            url3 : "http://www.taobao.com",
+        };
+
+        $scope.cars = {
+            car01 : {brand : "Ford", model : "Mustang", color : "red"},
+            car02 : {brand : "Fiat", model : "500", color : "white"},
+            car03 : {brand : "Volvo", model : "XC90", color : "black"}
+        };
+
+        $scope.alert= function(){
+          alert('$scope.alert');
+        };
+
+    });
+    app.directive('testTag',function(){
+        return {
+            restrict : 'A',
+            template:'自定义标签'
+        }
+    });
+
+    //创建自定义服务
+    app.service('hexafy',function(){
+        this.myFunc = function(x){
+            return x.toString(16);
+        }
+    });
+
+    //在自定义的过滤器中使用自定义的服务 hcxafy
+    app.filter('myFormat',['hexify',function(hexify){
+        return function (x){
+            return hexify.myFunc(x)
+        };
+    }]);
+
+    $(document).click(function(){
+        /*$.getJSON('http://www.baidu.com/s?wd=ip&callback=?',function(data){
+            console.log(data);
+        })*/
+
+        $.ajax({
+            url:'http://www.runoob.com/try/angularjs/data/Customers_JSON.php?callback=?',
+            type:'post',
+            data:'',
+            dataType:'jsonp',
+            /*beforeSend: function (xhr, settings) {
+                if (!/^(GET|HEAD|OPTIONS|TRACE)$/.test(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                }
+            },*/
+            success:function(data){
+                console.log('ok');
+                console.log(data);
+            },
+            error:function(data){
+                console.log('error');
+                console.log(data);
+
+
+            },
+
+        });
+    });
+
+</script>
+</body>
+</html>
